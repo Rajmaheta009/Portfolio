@@ -1,187 +1,308 @@
-/* ===========================
+/* ==========================
+   SCROLL PROGRESS BAR
+========================== */
+
+.scroll-progress{
+    position:fixed;
+    top:0;
+    left:0;
+    height:4px;
+    background:linear-gradient(
+        90deg,
+        #00d9ff,
+        #7c3aed
+    );
+    z-index:99999;
+    transition:width .15s linear;
+}
+
+/* ==========================
    NAVBAR
-=========================== */
+========================== */
 
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
+.navbar{
 
-  width: 100%;
-  height: 80px;
+    position:fixed;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    top:0;
+    left:0;
 
-  padding: 0 8%;
+    width:100%;
+    height:80px;
 
-  background: rgba(5, 8, 22, 0.6);
-  backdrop-filter: blur(12px);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding:0 8%;
 
-  transition: 0.3s ease;
+    z-index:1000;
 
-  z-index: 1000;
+    transition:.35s ease;
+
 }
 
-/* Scroll Effect */
+.navbar.active{
 
-.navbar.active {
-  background: rgba(5, 8, 22, 0.9);
-  box-shadow: 0 5px 25px rgba(0, 217, 255, 0.15);
+    background:rgba(5,8,22,.82);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.25);
+
 }
 
-/* ===========================
+/* ==========================
    LOGO
-=========================== */
+========================== */
 
-.logo {
-  font-size: 28px;
-  font-weight: 800;
-  letter-spacing: 2px;
+.logo{
 
-  color: white;
-  text-decoration: none;
+    color:white;
 
-  cursor: pointer;
+    text-decoration:none;
+
+    font-size:30px;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+    transition:.3s;
+
 }
 
-.logo span {
-  color: #00d9ff;
+.logo span{
+
+    color:#00d9ff;
+
 }
 
-/* ===========================
+.logo:hover{
+
+    text-shadow:
+        0 0 15px #00d9ff;
+
+}
+
+/* ==========================
    NAV LINKS
-=========================== */
+========================== */
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 35px;
+.nav-links{
 
-  list-style: none;
+    display:flex;
 
-  margin: 0;
-  padding: 0;
+    align-items:center;
+
+    gap:35px;
+
+    list-style:none;
+
 }
 
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
+.nav-links li{
 
-  position: relative;
+    list-style:none;
 
-  transition: 0.3s;
 }
 
-.nav-links a:hover {
-  color: #00d9ff;
+.nav-links a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:16px;
+
+    font-weight:500;
+
+    position:relative;
+
+    transition:.3s;
+
 }
 
-.nav-links a::after {
-  content: "";
+/* underline */
 
-  position: absolute;
+.nav-links a::after{
 
-  left: 0;
-  bottom: -8px;
+    content:"";
 
-  width: 0;
-  height: 2px;
+    position:absolute;
 
-  background: #00d9ff;
+    left:0;
 
-  transition: 0.3s;
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    background:#00d9ff;
+
+    transition:.3s;
+
 }
 
-.nav-links a:hover::after {
-  width: 100%;
+.nav-links a:hover{
+
+    color:#00d9ff;
+
 }
 
-/* ===========================
+.nav-links a:hover::after{
+
+    width:100%;
+
+}
+
+/* ==========================
+   ACTIVE LINK
+========================== */
+
+.active-link{
+
+    color:#00d9ff !important;
+
+}
+
+.active-link::after{
+
+    width:100% !important;
+
+}
+
+/* ==========================
    RESUME BUTTON
-=========================== */
+========================== */
 
-.resume-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.resume-btn{
 
-  padding: 12px 26px;
+    display:flex;
 
-  border-radius: 50px;
+    align-items:center;
 
-  background: #00d9ff;
+    gap:10px;
 
-  color: #050816;
+    padding:13px 28px;
 
-  text-decoration: none;
+    border-radius:50px;
 
-  font-weight: 700;
+    background:#00d9ff;
 
-  transition: 0.3s;
+    color:#050816;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    transition:.3s;
+
 }
 
-.resume-btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 20px #00d9ff;
+.resume-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 0 20px #00d9ff;
+
 }
 
-/* ===========================
+/* ==========================
    MENU BUTTON
-=========================== */
+========================== */
 
-.menu-btn {
-  display: none;
+.menu-btn{
 
-  background: transparent;
-  border: none;
+    display:none;
 
-  color: white;
+    color:white;
 
-  font-size: 30px;
+    font-size:32px;
 
-  cursor: pointer;
+    cursor:pointer;
+
 }
 
-/* ===========================
+/* ==========================
    MOBILE
-=========================== */
+========================== */
 
-@media (max-width: 900px) {
-  .menu-btn {
-    display: block;
-  }
+@media(max-width:992px){
 
-  .resume-btn {
-    display: none;
-  }
+.menu-btn{
 
-  .nav-links {
-    position: absolute;
+display:block;
 
-    top: 80px;
-    left: 0;
+}
 
-    width: 100%;
+.resume-btn{
 
-    background: rgba(5, 8, 22, 0.95);
+display:none;
 
-    backdrop-filter: blur(15px);
+}
 
-    flex-direction: column;
+.nav-links{
 
-    gap: 25px;
+position:absolute;
 
-    padding: 30px 0;
+top:80px;
 
-    display: none;
-  }
+left:0;
 
-  .nav-links.open {
-    display: flex;
-  }
+width:100%;
+
+background:rgba(5,8,22,.98);
+
+backdrop-filter:blur(18px);
+
+flex-direction:column;
+
+padding:35px 0;
+
+gap:25px;
+
+transform:translateY(-150%);
+
+opacity:0;
+
+pointer-events:none;
+
+transition:.4s;
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.nav-links.open{
+
+transform:translateY(0);
+
+opacity:1;
+
+pointer-events:auto;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.navbar{
+
+padding:0 25px;
+
+}
+
+.logo{
+
+font-size:26px;
+
+}
+
 }

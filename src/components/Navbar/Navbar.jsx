@@ -6,96 +6,145 @@ import { FiDownload } from "react-icons/fi";
 function Navbar() {
   const [scroll, setScroll] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [active, setActive] = useState("hero");
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScroll(window.scrollY > 20);
-    };
+    const sections = document.querySelectorAll("section");
 
-    const handleResize = () => {
-      if (window.innerWidth > 900) {
-        setMenuOpen(false);
-      }
+    const handleScroll = () => {
+
+      setScroll(window.scrollY > 20);
+
+      const totalHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+      const progressValue =
+        (window.scrollY / totalHeight) * 100;
+
+      setProgress(progressValue);
+
+      sections.forEach((section) => {
+        const top = section.offsetTop - 120;
+        const height = section.offsetHeight;
+
+        if (
+          window.scrollY >= top &&
+          window.scrollY < top + height
+        ) {
+          setActive(section.getAttribute("id"));
+        }
+      });
     };
 
     window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleResize);
 
-    return () => {
+    handleScroll();
+
+    return () =>
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleResize);
-    };
+
   }, []);
 
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <nav className={scroll ? "navbar active" : "navbar"}>
-      {/* Logo */}
-      <a href="#hero" className="logo" onClick={closeMenu}>
-        RAJ<span>.OS</span>
-      </a>
+    <>
 
-      {/* Navigation */}
-      <ul className={menuOpen ? "nav-links open" : "nav-links"}>
-        <li>
-          <a href="#hero" onClick={closeMenu}>
-            Home
-          </a>
-        </li>
+      <div
+        className="scroll-progress"
+        style={{ width: `${progress}%` }}
+      ></div>
 
-        <li>
-          <a href="#about" onClick={closeMenu}>
-            About
-          </a>
-        </li>
+      <nav className={scroll ? "navbar active" : "navbar"}>
 
-        <li>
-          <a href="#skills" onClick={closeMenu}>
-            Skills
-          </a>
-        </li>
+        <a href="#hero" className="logo">
+          RAJ<span>.OS</span>
+        </a>
 
-        <li>
-          <a href="#projects" onClick={closeMenu}>
-            Projects
-          </a>
-        </li>
+        <ul className={menuOpen ? "nav-links open" : "nav-links"}>
 
-        <li>
-          <a href="#experience" onClick={closeMenu}>
-            Experience
-          </a>
-        </li>
+          <li>
+            <a
+              href="#hero"
+              className={active === "hero" ? "active-link" : ""}
+              onClick={closeMenu}
+            >
+              Home
+            </a>
+          </li>
 
-        <li>
-          <a href="#ai-stats" onClick={closeMenu}>
-            AI Stats
-          </a>
-        </li>
+          <li>
+            <a
+              href="#about"
+              className={active === "about" ? "active-link" : ""}
+              onClick={closeMenu}
+            >
+              About
+            </a>
+          </li>
 
-        <li>
-          <a href="#contact" onClick={closeMenu}>
-            Contact
-          </a>
-        </li>
-      </ul>
+          <li>
+            <a
+              href="#skills"
+              className={active === "skills" ? "active-link" : ""}
+              onClick={closeMenu}
+            >
+              Skills
+            </a>
+          </li>
 
-      {/* Resume Button */}
-      <a href="/resume.pdf" download className="resume-btn">
-        <FiDownload />
-        Resume
-      </a>
+          <li>
+            <a
+              href="#projects"
+              className={active === "projects" ? "active-link" : ""}
+              onClick={closeMenu}
+            >
+              Projects
+            </a>
+          </li>
 
-      {/* Mobile Menu */}
-      <button
-        className="menu-btn"
-        onClick={() => setMenuOpen(!menuOpen)}
-        aria-label="Toggle Navigation"
-      >
-        {menuOpen ? <HiX /> : <HiMenuAlt3 />}
-      </button>
-    </nav>
+          <li>
+            <a
+              href="#experience"
+              className={active === "experience" ? "active-link" : ""}
+              onClick={closeMenu}
+            >
+              Experience
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#contact"
+              className={active === "contact" ? "active-link" : ""}
+              onClick={closeMenu}
+            >
+              Contact
+            </a>
+          </li>
+
+        </ul>
+
+        <a
+          href="/resume.pdf"
+          className="resume-btn"
+        >
+          <FiDownload />
+          Resume
+        </a>
+
+        <div
+          className="menu-btn"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? <HiX /> : <HiMenuAlt3 />}
+        </div>
+
+      </nav>
+
+    </>
   );
 }
 

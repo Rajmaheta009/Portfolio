@@ -1,530 +1,166 @@
-# Portfolio Project - Complete Brain Documentation
+﻿# Portfolio Project Brain
 
-**Last Updated:** 2026-07-01  
-**Project Type:** Personal Portfolio Website  
-**Tech Stack:** React 19 + Vite 8 + JavaScript  
-**Purpose:** Showcase AI Engineer, ML Engineer, Python & React Developer skills  
-**GitHub Repository:** [Rajmaheta009/Portfolio](https://github.com/Rajmaheta009/Portfolio)  
-**Current Branch:** master  
-**Status:** Active Development
+**Last Updated:** 2026-07-01
+**Project:** Portfolio
+**Repository:** Rajmaheta009/Portfolio
+**Branch:** master
+**Type:** Personal Portfolio Website
 
 ---
 
-## 📋 Project Overview
+## Project Summary
 
-This is a **modern, interactive personal portfolio website** for Raj showcasing multiple skill sets including:
-- AI Engineering
-- Machine Learning Engineering
-- Python Development
-- React Development
-- Full Stack Development
+A modern portfolio website built with React and Vite that highlights Raj's AI, machine learning, Python, and frontend development skills.
 
-The portfolio features smooth animations, interactive UI, and a professional modern design with gradient backgrounds and TypeScript-like animations.
+The current application renders a responsive landing page with an animated hero section, a skills section, and a floating AI core UI effect.
 
 ---
 
-## 🏗️ Project Architecture
+## Tech Stack
 
-### Tech Stack Details
-
-```
-Frontend Framework: React 19.2.7
-Build Tool: Vite 8.1.1
-Animation Library: Framer Motion 12.42.2
-Type Animation: React Type Animation 3.2.0
-Icons: React Icons 5.7.0
-Package Manager: npm
-```
-
-### Build & Development Scripts
-
-```json
-"dev": "vite"                    // Start development server
-"build": "vite build"             // Build for production
-"lint": "oxlint"                  // Run Oxlint static analysis
-"preview": "vite preview"         // Preview production build
-```
+- React 19
+- Vite 8
+- Tailwind CSS 4
+- Framer Motion
+- React Three Fiber / Three.js
+- React Icons
+- React Type Animation
+- npm
 
 ---
 
-## 📁 Directory Structure & Purpose
+## Current App Structure
 
-```
-portfolio/
-├── public/                       # Static assets
-│   ├── images/                   # Image assets (hero images, project thumbnails)
-│   └── models/                   # 3D models for Three.js scenes
-│
-├── src/
-│   ├── components/               # React components (feature-based organization)
-│   │   ├── Navbar/               # Navigation header with menu toggle
-│   │   │   ├── Navbar.jsx        # Menu, logo, scroll detection
-│   │   │   └── Navbar.css        # Styling & responsiveness
-│   │   │
-│   │   ├── Hero/                 # Landing/Introduction section
-│   │   │   ├── Hero.jsx          # Main hero with typing animation
-│   │   │   └── Hero.css          # Hero styling & animations
-│   │   │
-│   │   ├── About/                # About Me section [IN DEVELOPMENT]
-│   │   │   ├── About.jsx         # Personal background & summary
-│   │   │   └── About.css
-│   │   │
-│   │   ├── Skills/               # Technical Skills section [IN DEVELOPMENT]
-│   │   │   ├── Skills.jsx        # Skills showcase/grid
-│   │   │   └── Skills.css
-│   │   │
-│   │   ├── Projects/             # Portfolio Projects section [IN DEVELOPMENT]
-│   │   │   ├── Project.jsx       # Project cards/grid
-│   │   │   └── Project.css
-│   │   │
-│   │   ├── Experiences/          # Work Experience section [IN DEVELOPMENT]
-│   │   │   ├── Experiences.jsx   # Timeline or cards of experiences
-│   │   │   └── Experiences.css
-│   │   │
-│   │   ├── Contact/              # Contact Form section [IN DEVELOPMENT]
-│   │   │   ├── Contact.jsx       # Contact form or contact info
-│   │   │   └── Contact.css
-│   │   │
-│   │   ├── Footer/               # Footer component [IN DEVELOPMENT]
-│   │   │   ├── Footer.jsx        # Links, copyright, social
-│   │   │   └── Footer.css
-│   │   │
-│   │   ├── Threesence/           # 3D Graphics section [IN DEVELOPMENT]
-│   │   │   ├── ThreeScene.jsx    # Main Three.js scene setup
-│   │   │   ├── FloatingOrb.jsx   # Floating 3D orb object
-│   │   │   ├── Stars.jsx         # Starfield/background effect
-│   │   │   └── ThreeScene.css    # Canvas styling
-│   │   │
-│   │   ├── Cursor/               # Custom cursor effect [IN DEVELOPMENT]
-│   │   ├── Loader/               # Loading animation [IN DEVELOPMENT]
-│   │
-│   ├── data/                     # Data files & constants [EMPTY - Ready for use]
-│   │                             # Can contain:
-│   │                             # - skills.js (skill list)
-│   │                             # - projects.js (project data)
-│   │                             # - experiences.js (work experience)
-│   │
-│   ├── hooks/                    # Custom React hooks [EMPTY - Ready for use]
-│   │                             # Can contain:
-│   │                             # - useScroll.js (scroll detection)
-│   │                             # - useAnimation.js (animation logic)
-│   │
-│   ├── style/                    # Global styles
-│   │   ├── globals.css           # Global CSS [EMPTY - Ready for use]
-│   │   ├── Variables.css         # CSS variables (colors, fonts, spacing)
-│   │   └── animations.css        # Reusable animation keyframes
-│   │
-│   ├── assets/                   # Local assets & images [EMPTY]
-│   │
-│   ├── App.jsx                   # Root component
-│   ├── App.css                   # Main app styling
-│   ├── index.css                 # Base/reset styles
-│   └── main.jsx                  # React entry point
-│
-├── index.html                    # HTML entry point
-├── vite.config.js                # Vite configuration
-├── package.json                  # Dependencies & scripts
-├── README.md                     # Default Vite template
-└── .oxlintrc.json               # Oxlint configuration
-```
+- `src/main.jsx` — React entry point
+- `src/App.jsx` — root component with all sections integrated
+- `src/components/Navbar/Navbar.jsx` — responsive header with menu toggle and resume button
+- `src/components/Hero/Hero.jsx` — landing section with typing animation and AICore visual
+- `src/components/About/About.jsx` — about section with profile summary and stats
+- `src/components/Skills/Skills.jsx` — skills grid with technology cards and proficiency levels
+- `src/components/AIStats/AIStats.jsx` — animated statistics with counters (AI models, ML models, projects, commits)
+- `src/components/Projects/Project.jsx` — portfolio projects grid with ProjectCard components
+- `src/components/Projects/ProjectCard.jsx` — individual project card component
+- `src/components/Experiences/Experiences.jsx` — timeline of work experience and journey
+- `src/components/Contact/Contact.jsx` — contact form with terminal-style UI
+- `src/components/Footer/Footer.jsx` — footer with links, social icons, and scroll-to-top button
+- `src/components/AICore/AICore.jsx` — animated AI core visual with rings and pulses
+- `src/components/Loader/Loader.jsx` — page loader with boot animation
+- `src/components/Threesence/ThreeScene.jsx` — Three.js canvas with OrbitControls
+- `src/components/Threesence/FloatingOrb.jsx` — 3D floating orb animation
+- `src/components/Threesence/Lights.jsx` — Three.js lighting setup
+- `src/components/Background/Background.jsx` — background gradients and grid pattern
+- `src/data/projects.js` — projects data array
+- `src/data/experience.js` — experience data array
+- `src/index.css` — global styles and Tailwind import
 
 ---
 
-## 🔄 Application Flow & Data Flow
+## Installed Dependencies
 
-### 1. Entry Point
-```
-main.jsx (React app mount)
-    ↓
-App.jsx (Root component)
-    ↓
-Background Setup (Gradient + Grid effect)
+- @react-three/drei
+- @react-three/fiber
+- @tailwindcss/vite
+- framer-motion
+- gsap
+- lenis
+- react
+- react-dom
+- react-icons
+- react-type-animation
+- tailwindcss
+- three
+
+Dev dependencies:
+
+- @types/react
+- @types/react-dom
+- @vitejs/plugin-react
+- oxlint
+- vite
+
+---
+
+## Implemented Features
+
+- Responsive navigation bar with mobile menu
+- Hero section with animated intro and role typing effect
+- About section with profile description and stats
+- Skills section listing Python, React, FastAPI, PostgreSQL, MongoDB, TensorFlow, PyTorch, Java, Docker, and Git
+- AI Core animated component in hero section
+- Resume download links
+- Project layout ready for additional sections such as Projects, Experience, and Contact
+
+---
+
+## Component Status
+
+| Component | Status | Notes |
+| --- | --- | --- |
+| `Navbar` | Implemented | Responsive, scroll-aware, mobile menu, resume button |
+| `Hero` | Implemented | Animated intro and typing roles |
+| `About` | Implemented | Profile summary and skill stats |
+| `Skills` | Implemented | Skill cards with levels and versions |
+| `AICore` | Implemented | Animated UI element in hero section |
+| `Background` | Implemented | Gradient and grid background |
+| `Projects` | Placeholder | Component file exists but content is empty |
+| `Experiences` | Placeholder | Component file exists but content is empty |
+| `Contact` | Placeholder | Component file exists but content is empty |
+| `Footer` | Placeholder | Component file exists but content is empty |
+| `Threesence` | Placeholder | Three.js scene files exist; not yet integrated |
+| `Cursor` | Placeholder | No explicit implementation details yet |
+| `Loader` | Placeholder | No explicit implementation details yet |
+
+---
+
+## Development Notes
+
+- The app uses Tailwind via `@import "tailwindcss"` in `src/index.css`.
+- Navigation links reference sections like `#hero`, `#about`, `#skills`, `#projects`, `#experience`, and `#contact`.
+- `Projects`, `Experiences`, `Contact`, and `Footer` components are present as empty placeholders and can be completed later.
+- The current README is still the default Vite template and should be replaced with portfolio-specific documentation.
+
+---
+
+## Run Instructions
+
+1. Install dependencies:
+
+```bash
+npm install
 ```
 
-### 2. Main Component Hierarchy
+2. Start development server:
 
-```
-<App>
-  ├── Background Layer (Fixed)
-  │   ├── Gradient 1 (Animated blur effect)
-  │   ├── Gradient 2 (Animated blur effect)
-  │   └── Grid (Background pattern)
-  │
-  └── Main Content (z-index > background)
-      ├── <Navbar>
-      │   ├── Logo "RAJ.OS" (Enhanced branding)
-      │   ├── Nav Links with anchors (#hero, #about, #skills, #projects, #experience, #contact)
-      │   ├── Resume Download Button (FiDownload icon)
-      │   ├── Close Menu on Navigation (Improved UX)
-      │   └── Mobile Menu Toggle (HiMenuAlt3/HiX icons)
-      │
-      └── <Hero>
-          ├── Intro Text (Motion animated)
-          ├── Name "RAJ" (Scale/fade animation)
-          └── Typing Animation
-              └── Cycles through: AI Engineer → ML Engineer → Python Dev → React Dev → Full Stack Dev
+```bash
+npm run dev
 ```
 
-### 3. Planned Full User Flow
+3. Build production bundle:
 
+```bash
+npm run build
 ```
-User Visits → Loader [loads assets]
-             ↓
-Navbar sticky on scroll
-         ↓
-Hero Section (Landing)
-         ↓
-About Section [scroll down]
-         ↓
-Skills Section
-         ↓
-Projects Section (with details)
-         ↓
-Experience Timeline
-         ↓
-3D Scene (Threesence - FloatingOrb + Stars)
-         ↓
-Contact Form
-         ↓
-Footer (Social links, copyright)
+
+4. Preview production build:
+
+```bash
+npm run preview
 ```
 
 ---
 
-## 🎨 Design & Animation Strategy
+## Roadmap
 
-### Current Implementations
-
-1. **Navbar** ✅ IMPROVED
-   - Sticky positioning on scroll (triggers at scrollY > 20px) - more responsive
-   - Mobile hamburger menu with toggle
-   - Smooth transition on background activation
-   - Logo enhanced with ".OS" branding
-   - Resume download button with icon
-   - Anchor-based navigation links
-   - Auto-close menu when navigating (closeMenu function)
-   - Better scroll detection threshold
-
-2. **Hero Section**
-   - Intro text: Fade-in + Y-axis translate animation (0.8s)
-   - Name "RAJ": Scale (0.7→1) + Fade animation (0.8s)
-   - Typing animation with 2s delays between role changes
-   - Glow effect for visual appeal
-
-3. **Background**
-   - Two animated gradients (blur effects for depth)
-   - Grid overlay pattern
-   - Fixed positioning for parallax effect
-
-### Animation Libraries Used
-
-- **Framer Motion**: Advanced motion control, smooth transitions
-- **React Type Animation**: Typewriter/typing effect for role cycling
-- **CSS Animations**: Custom keyframes in animations.css
-
-### Planned Animations
-
-- Cursor tracking effect (Cursor component)
-- Page loading animation (Loader component)
-- 3D floating objects (FloatingOrb in ThreeScene)
-- Starfield background effect (Stars component)
-- Scroll-triggered animations for sections
+- [ ] Add Projects section content
+- [ ] Add Experiences section content
+- [ ] Add Contact section with a form or contact links
+- [ ] Add Footer component and social links
+- [ ] Integrate 3D Threesence scene into the page
+- [ ] Add loader and custom cursor interactions
+- [ ] Update `README.md` to reflect current portfolio content
 
 ---
 
-## 🚀 Dependencies & Their Purposes
+## Notes
 
-### Production Dependencies
-
-| Package | Version | Purpose |
-|---------|---------|---------|
-| `framer-motion` | ^12.42.2 | Advanced animation library |
-| `react` | ^19.2.7 | UI framework |
-| `react-dom` | ^19.2.7 | React rendering |
-| `react-icons` | ^5.7.0 | Icon library (HeroIcons, FontAwesome, etc) |
-| `react-type-animation` | ^3.2.0 | Typing animation effect |
-
-### Development Dependencies
-
-| Package | Version | Purpose |
-|---------|---------|---------|
-| `@vitejs/plugin-react` | ^6.0.3 | React plugin for Vite |
-| `vite` | ^8.1.1 | Build tool & dev server |
-| `oxlint` | ^1.71.0 | Fast JavaScript linter |
-| React TypeScript types | ^19.2.17/19.2.3 | Type definitions |
-
----
-
-## 📊 Component Status
-
-| Component | Status | Purpose |
-|-----------|--------|---------|
-| `Navbar` | ✅ Enhanced | Navigation with resume download & improved UX |
-| `Hero` | ✅ Complete | Landing section with intro |
-| `About` | ⚠️ Empty | Personal background section |
-| `Skills` | ⚠️ Empty | Technical skills showcase |
-| `Projects` | ⚠️ Empty | Portfolio projects grid |
-| `Experiences` | ⚠️ Empty | Work experience timeline |
-| `Contact` | ⚠️ Empty | Contact form/information |
-| `Footer` | ⚠️ Empty | Footer with social links |
-| `Threesence` | ⚠️ Empty | 3D graphics scene |
-| `FloatingOrb` | ⚠️ Empty | 3D orb animation |
-| `Stars` | ⚠️ Empty | Starfield effect |
-| `Cursor` | ⚠️ Empty | Custom cursor tracking |
-| `Loader` | ⚠️ Empty | Page loading animation |
-
----
-
-## 💡 Key Implementation Patterns
-
-### 1. Navbar State Management (UPDATED)
-
-**Navbar Component** with enhanced features:
-```javascript
-- scroll: boolean          // Tracks if page scrolled > 20px (responsive threshold)
-- menuOpen: boolean        // Tracks mobile menu state
-
-// Key functions:
-- closeMenu()             // Closes menu when navigation link clicked
-- handleScroll()          // Throttled scroll event listener
-```
-
-**Navbar Features:**
-- Resume download button (links to /resume.pdf)
-- Anchor-based navigation (#hero, #about, #skills, #projects, #experience, #contact)
-- Logo branding "RAJ.OS"
-- Mobile-responsive menu with hamburger icon
-- Auto-close on navigation (better UX)
-
-### 2. State Management
-
-**Future Pattern Suggestion:**
-- Use context or Redux for global state
-- Store scroll position, theme, animations
-- Consider Context API for theme switching
-
-**Files:**
-- `Variables.css`: CSS custom properties (--primary-color, --font-size, etc)
-- `animations.css`: Reusable keyframes (@keyframes)
-- `globals.css`: Reset styles, body defaults
-- Component-specific `.css` files: Scoped styling
-
-**Pattern:**
-- Each component has its own CSS file
-- Use CSS variables for consistency
-- Mobile-first responsive design
-
-### 3. Event Listeners Pattern
-
-**Example from Navbar:**
-```javascript
-useEffect(() => {
-  const handleScroll = () => setScroll(window.scrollY > 50);
-  window.addEventListener("scroll", handleScroll);
-  
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
-```
-
-**Apply this to:**
-- Scroll animations
-- Mouse tracking
-- Window resize handling
-
----
-
-## 🎯 Development Roadmap
-
-### Phase 1: Core Components (Current Phase)
-- [x] Navbar complete
-- [x] Hero section complete
-- [ ] Complete About section
-- [ ] Complete Skills section
-
-### Phase 2: Portfolio Sections
-- [ ] Projects grid with details
-- [ ] Experience timeline
-- [ ] Contact form with validation
-
-### Phase 3: Advanced Features
-- [ ] 3D scene with Three.js
-- [ ] Custom cursor effect
-- [ ] Page loader animation
-- [ ] Smooth scroll behavior
-
-### Phase 4: Optimization & Deployment
-- [ ] Performance optimization
-- [ ] SEO optimization
-- [ ] Lighthouse score improvements
-- [ ] Deploy to hosting (Vercel/Netlify)
-
----
-
-## 🛠️ Common Development Tasks
-
-### Adding a New Section
-
-1. Create folder in `src/components/SectionName/`
-2. Create `SectionName.jsx` with component
-3. Create `SectionName.css` with styling
-4. Import in `App.jsx`
-5. Add data in `src/data/sectionData.js` if needed
-6. Link in Navbar navigation
-
-### Adding Animations
-
-```javascript
-// Use Framer Motion
-import { motion } from "framer-motion";
-
-<motion.div
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.5 }}
->
-  Content
-</motion.div>
-```
-
-### Using React Icons
-
-```javascript
-import { HiMenuAlt3, HiX } from "react-icons/hi";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-
-<HiMenuAlt3 className="icon" />
-```
-
----
-
-## 📝 CSS Architecture Notes
-
-### Variables Pattern (In Variables.css)
-```css
-:root {
-  --primary-color: #0f0f1e;
-  --accent-color: #00d4ff;
-  --text-primary: #ffffff;
-  --text-secondary: #a0a0a0;
-  --spacing-unit: 1rem;
-  --transition-time: 0.3s;
-}
-```
-
-### Responsive Design Strategy
-
-- Mobile-first approach
-- Breakpoints:
-  - `768px`: Tablets
-  - `1024px`: Desktops
-  - `1440px`: Large screens
-
-### Animation Performance
-
-- Use CSS transforms (translate, rotate, scale) for GPU acceleration
-- Avoid animating dimensions (width, height)
-- Use `will-change` sparingly for heavy animations
-- Test performance with Chrome DevTools
-
----
-
-## 🔗 External Resources & References
-
-**None currently needed** - Project is self-contained with available npm packages.
-
-**Future additions might need:**
-- Three.js for advanced 3D graphics
-- Email service (Nodemailer, EmailJS) for contact form
-- Analytics (Google Analytics)
-
----
-
-## ⚙️ Configuration Files Explained
-
-### `vite.config.js`
-- Configures React plugin for JSX support
-- Sets up development server
-- Defines build output
-
-### `.oxlintrc.json`
-- Linter configuration
-- Enforces code quality standards
-- Prevents common JavaScript mistakes
-
-### `package.json`
-- Defines all dependencies
-- npm scripts for development workflow
-- Project metadata (name, version, type)
-
-### GitHub Repository
-- **Owner:** Rajmaheta009
-- **Repository:** Portfolio
-- **Branch:** master (default)
-- **Remote:** Connected and synced
-- **Status:** Active development with regular commits
-
----
-
-## 🎓 Learning Points & Best Practices Applied
-
-1. **Component-Based Architecture**
-   - Each feature is isolated in its own component
-   - Easier to maintain and test
-
-2. **CSS Organization**
-   - Separate global styles from component styles
-   - CSS variables for theming
-
-3. **Performance**
-   - Vite for fast HMR (Hot Module Replacement)
-   - Code splitting for faster builds
-
-4. **Responsive Design**
-   - Mobile menu toggle in Navbar
-   - Planned responsive layouts
-
-5. **Modern React**
-   - Functional components only
-   - Hooks for state management
-   - Clean effect cleanup
-
----
-
-## 🚨 Important Notes for Future Development
-
-1. **Data Organization**: Create `src/data/` files with arrays of objects for dynamic content
-2. **Custom Hooks**: Implement `useScroll`, `useAnimation` in `src/hooks/`
-3. **Theme System**: Define all colors/fonts in `Variables.css`
-4. **Mobile First**: Design components mobile-first, then enhance
-5. **Accessibility**: Add ARIA labels, semantic HTML as features develop
-6. **Testing**: Consider Jest + React Testing Library for component tests
-7. **Type Safety**: Consider migrating to TypeScript for larger project
-
----
-
-**This brain file serves as the complete reference for understanding the project structure, flow, and development guidelines. Update this document as new features are added or architecture decisions are made.**
-
----
-
-## 📜 Changelog & Recent Updates
-
-### 2026-07-01 - Navbar Enhancement
-- ✅ Improved scroll detection threshold (50px → 20px)
-- ✅ Added FiDownload icon from react-icons
-- ✅ Enhanced logo with ".OS" branding (RAJ.OS)
-- ✅ Added resume download button (/resume.pdf)
-- ✅ Implemented anchor-based navigation links
-- ✅ Added closeMenu function for better UX
-- ✅ Mobile menu now closes after navigation
-- ✅ GitHub repository connected and synced
-- 📝 Updated PROJECT_BRAIN.md with current progress
-
-### Next Priority Updates
-- [ ] Complete About section
-- [ ] Build Skills section with tech stack grid
-- [ ] Create Projects section with project cards
-- [ ] Implement Experience timeline
-- [ ] Add Contact form
-- [ ] Build 3D scene (Threesence)
-- [ ] Add page transitions and loader
-- [ ] Deploy resume.pdf to /public folder
+This file documents the current state of the portfolio application and serves as a project brain guide. Keep it updated as new sections and features are implemented.

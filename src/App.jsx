@@ -1,37 +1,35 @@
 import "./App.css";
 
-import Background from "./components/Background/Background";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
+import AIStats from "./components/AIStats/AIStats";
 import About from "./components/About/About";
 import Skills from "./components/Skills/Skills";
 import Projects from "./components/Projects/Project";
 import Experience from "./components/Experiences/Experiences";
-import AIStats from "./components/AIStats/AIStats";
 import Contact from "./components/Contact/Contact";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
     <div className="app">
+      {/* Background */}
+      <div className="background">
+        <div className="gradient gradient1"></div>
+        <div className="gradient gradient2"></div>
+        <div className="grid"></div>
+      </div>
 
-      <Background />
-
+      {/* Components */}
       <Navbar />
-
       <Hero />
-
       <About />
-
       <Skills />
-
-      <Projects />
-
-      <Experience />
-
       <AIStats />
-
+      <Projects />
+      <Experience />
       <Contact />
-
+      <Footer />
     </div>
   );
 }
