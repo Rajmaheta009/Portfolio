@@ -3,7 +3,10 @@
 **Last Updated:** 2026-07-01  
 **Project Type:** Personal Portfolio Website  
 **Tech Stack:** React 19 + Vite 8 + JavaScript  
-**Purpose:** Showcase AI Engineer, ML Engineer, Python & React Developer skills
+**Purpose:** Showcase AI Engineer, ML Engineer, Python & React Developer skills  
+**GitHub Repository:** [Rajmaheta009/Portfolio](https://github.com/Rajmaheta009/Portfolio)  
+**Current Branch:** master  
+**Status:** Active Development
 
 ---
 
@@ -149,9 +152,11 @@ Background Setup (Gradient + Grid effect)
   │
   └── Main Content (z-index > background)
       ├── <Navbar>
-      │   ├── Logo
-      │   ├── Nav Links (Home, About, Skills, Projects, Experience, Contact)
-      │   └── Mobile Menu Toggle
+      │   ├── Logo "RAJ.OS" (Enhanced branding)
+      │   ├── Nav Links with anchors (#hero, #about, #skills, #projects, #experience, #contact)
+      │   ├── Resume Download Button (FiDownload icon)
+      │   ├── Close Menu on Navigation (Improved UX)
+      │   └── Mobile Menu Toggle (HiMenuAlt3/HiX icons)
       │
       └── <Hero>
           ├── Intro Text (Motion animated)
@@ -190,10 +195,15 @@ Footer (Social links, copyright)
 
 ### Current Implementations
 
-1. **Navbar**
-   - Sticky positioning on scroll (triggers at scrollY > 50px)
+1. **Navbar** ✅ IMPROVED
+   - Sticky positioning on scroll (triggers at scrollY > 20px) - more responsive
    - Mobile hamburger menu with toggle
    - Smooth transition on background activation
+   - Logo enhanced with ".OS" branding
+   - Resume download button with icon
+   - Anchor-based navigation links
+   - Auto-close menu when navigating (closeMenu function)
+   - Better scroll detection threshold
 
 2. **Hero Section**
    - Intro text: Fade-in + Y-axis translate animation (0.8s)
@@ -249,7 +259,7 @@ Footer (Social links, copyright)
 
 | Component | Status | Purpose |
 |-----------|--------|---------|
-| `Navbar` | ✅ Complete | Navigation & menu |
+| `Navbar` | ✅ Enhanced | Navigation with resume download & improved UX |
 | `Hero` | ✅ Complete | Landing section with intro |
 | `About` | ⚠️ Empty | Personal background section |
 | `Skills` | ⚠️ Empty | Technical skills showcase |
@@ -267,19 +277,31 @@ Footer (Social links, copyright)
 
 ## 💡 Key Implementation Patterns
 
-### 1. State Management
+### 1. Navbar State Management (UPDATED)
 
-**Navbar Component** (Currently only component with state):
+**Navbar Component** with enhanced features:
 ```javascript
-- scroll: boolean          // Tracks if page scrolled > 50px
+- scroll: boolean          // Tracks if page scrolled > 20px (responsive threshold)
 - menuOpen: boolean        // Tracks mobile menu state
+
+// Key functions:
+- closeMenu()             // Closes menu when navigation link clicked
+- handleScroll()          // Throttled scroll event listener
 ```
+
+**Navbar Features:**
+- Resume download button (links to /resume.pdf)
+- Anchor-based navigation (#hero, #about, #skills, #projects, #experience, #contact)
+- Logo branding "RAJ.OS"
+- Mobile-responsive menu with hamburger icon
+- Auto-close on navigation (better UX)
+
+### 2. State Management
 
 **Future Pattern Suggestion:**
 - Use context or Redux for global state
 - Store scroll position, theme, animations
-
-### 2. Styling Architecture
+- Consider Context API for theme switching
 
 **Files:**
 - `Variables.css`: CSS custom properties (--primary-color, --font-size, etc)
@@ -434,6 +456,13 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 - npm scripts for development workflow
 - Project metadata (name, version, type)
 
+### GitHub Repository
+- **Owner:** Rajmaheta009
+- **Repository:** Portfolio
+- **Branch:** master (default)
+- **Remote:** Connected and synced
+- **Status:** Active development with regular commits
+
 ---
 
 ## 🎓 Learning Points & Best Practices Applied
@@ -474,3 +503,28 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 ---
 
 **This brain file serves as the complete reference for understanding the project structure, flow, and development guidelines. Update this document as new features are added or architecture decisions are made.**
+
+---
+
+## 📜 Changelog & Recent Updates
+
+### 2026-07-01 - Navbar Enhancement
+- ✅ Improved scroll detection threshold (50px → 20px)
+- ✅ Added FiDownload icon from react-icons
+- ✅ Enhanced logo with ".OS" branding (RAJ.OS)
+- ✅ Added resume download button (/resume.pdf)
+- ✅ Implemented anchor-based navigation links
+- ✅ Added closeMenu function for better UX
+- ✅ Mobile menu now closes after navigation
+- ✅ GitHub repository connected and synced
+- 📝 Updated PROJECT_BRAIN.md with current progress
+
+### Next Priority Updates
+- [ ] Complete About section
+- [ ] Build Skills section with tech stack grid
+- [ ] Create Projects section with project cards
+- [ ] Implement Experience timeline
+- [ ] Add Contact form
+- [ ] Build 3D scene (Threesence)
+- [ ] Add page transitions and loader
+- [ ] Deploy resume.pdf to /public folder

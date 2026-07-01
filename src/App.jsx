@@ -1,26 +1,25 @@
 import "./App.css";
 
+import Background from "./components/Background/Background";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
+import About from "./components/About/About";
+import Skills from "./components/Skills/Skills";
 
 function App() {
   return (
     <div className="app">
 
-      {/* Background */}
-
-      <div className="background">
-        <div className="gradient gradient1"></div>
-        <div className="gradient gradient2"></div>
-        <div className="grid"></div>
-      </div>
-
-      {/* Components */}
+      <Background />
 
       <Navbar />
 
       <Hero />
 
+      <About />
+
+      <Skills />
+      
     </div>
   );
 }

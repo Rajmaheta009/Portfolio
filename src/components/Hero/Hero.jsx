@@ -1,22 +1,41 @@
 import "./Hero.css";
+import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
+import { FiArrowRight, FiDownload } from "react-icons/fi";
+
+import AICore from "../AICore/AICore";
 
 function Hero() {
   return (
-    <section className="hero">
+    <section id="hero" className="hero">
 
       <div className="hero-left">
 
-        <p className="intro">
-          Hello, I'm
-        </p>
+        <motion.div
+          className="status"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+        >
+          ● AI CORE ONLINE
+        </motion.div>
 
-        <h1>
+        <motion.p
+          className="intro"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
+          Hello, I'm
+        </motion.p>
+
+        <motion.h1
+          className="hero-title"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
           RAJ
-        </h1>
+        </motion.h1>
 
         <div className="typing">
-
           <TypeAnimation
             sequence={[
               "AI Engineer",
@@ -27,49 +46,48 @@ function Hero() {
               2000,
               "React Developer",
               2000,
+              "Full Stack Developer",
+              2000,
             ]}
-            speed={45}
+            speed={40}
             repeat={Infinity}
           />
-
         </div>
 
-        <p className="description">
+        <motion.p
+          className="hero-desc"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+        >
+          I build intelligent applications using Artificial Intelligence,
+          Machine Learning, Python, FastAPI and modern React technologies.
 
-          Passionate about Artificial Intelligence,
-          Data Science, Machine Learning,
-          FastAPI and Modern Web Development.
+          My goal is to create products that solve real-world problems through
+          automation and smart software engineering.
+        </motion.p>
 
-        </p>
+        <motion.div
+          className="hero-buttons"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+        >
 
-        <div className="buttons">
+          <a href="/resume.pdf" download className="primary-btn">
+            <FiDownload />
+            Resume
+          </a>
 
-          <button>
-
+          <a href="#projects" className="secondary-btn">
+            <FiArrowRight />
             View Projects
+          </a>
 
-          </button>
-
-          <button className="outline">
-
-            Download Resume
-
-          </button>
-
-        </div>
+        </motion.div>
 
       </div>
 
       <div className="hero-right">
-
-        <div className="ai-placeholder">
-
-          <div className="circle"></div>
-
-          <span>AI CORE</span>
-
-        </div>
-
+        <AICore />
       </div>
 
     </section>
