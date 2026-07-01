@@ -69,6 +69,12 @@ function Navbar() {
         </li>
 
         <li>
+          <a href="#ai-stats" onClick={closeMenu}>
+            AI Stats
+          </a>
+        </li>
+
+        <li>
           <a href="#contact" onClick={closeMenu}>
             Contact
           </a>
