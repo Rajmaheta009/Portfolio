@@ -1,25 +1,29 @@
 import "./Experiences.css";
 import { motion } from "framer-motion";
-import experience from "../../data/experience";
+import experience from "../../../data/experience";
 
 function Experience() {
   return (
-    <section id="experience" className="experience">
+    <section className="experience" id="experience">
 
-      <div className="experience-header">
-
-        <span>CAREER LOG</span>
+      <motion.div
+        className="experience-header"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: .6 }}
+        viewport={{ once: true }}
+      >
+        <span className="section-tag">CAREER JOURNEY</span>
 
         <h2>
-          My <span>Journey</span>
+          My <span>Experience</span>
         </h2>
 
         <p>
-          Every project and every challenge has helped me grow into an AI
-          Engineer focused on building intelligent software.
+          My journey from programming fundamentals to Artificial Intelligence,
+          Full Stack Development and modern software engineering.
         </p>
-
-      </div>
+      </motion.div>
 
       <div className="timeline">
 
@@ -30,13 +34,15 @@ function Experience() {
             key={item.id}
             initial={{ opacity: 0, x: index % 2 === 0 ? -80 : 80 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: .6 }}
             viewport={{ once: true }}
           >
 
+            <div className="timeline-dot"></div>
+
             <div className="timeline-content">
 
-              <span className="year">
+              <span className="timeline-year">
                 {item.year}
               </span>
 

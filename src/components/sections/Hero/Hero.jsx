@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import { FiArrowRight, FiDownload } from "react-icons/fi";
 
-import AICore from "../AICore/AICore";
+import AICore from "../../effects/AICore/AICore";
 
 function Hero() {
   return (

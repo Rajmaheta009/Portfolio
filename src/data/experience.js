@@ -1,36 +1,36 @@
 const experience = [
   {
     id: 1,
-    year: "2024",
-    title: "Python Developer",
+    year: "2023",
+    title: "Started Programming Journey",
     company: "Self Learning",
     description:
-      "Started my journey with Python, object-oriented programming, data structures and automation."
+      "Started learning C, C++, Java and Python while building small console applications and understanding programming fundamentals.",
   },
   {
     id: 2,
     year: "2024",
-    title: "Full Stack Developer",
+    title: "Full Stack & Backend Development",
     company: "Personal Projects",
     description:
-      "Built applications using React, FastAPI, PostgreSQL, MongoDB and Streamlit."
+      "Built multiple applications using React, FastAPI, PostgreSQL, Streamlit and REST APIs.",
   },
   {
     id: 3,
     year: "2025",
-    title: "Machine Learning Engineer",
+    title: "Artificial Intelligence & Machine Learning",
     company: "AI Projects",
     description:
-      "Worked on regression, classification, model training, Hugging Face, PyTorch and TensorFlow."
+      "Worked on LLMs, RAG systems, MCP, Transformers, PyTorch, TensorFlow and real-world AI applications.",
   },
   {
     id: 4,
-    year: "2025",
-    title: "AI Engineer",
-    company: "LLM Research",
+    year: "2026",
+    title: "MCA Student & AI Engineer",
+    company: "Current",
     description:
-      "Built AI systems using RAG, MCP, LLMs, Docker and intelligent automation."
-  }
+      "Building production-ready AI systems, modern web applications and preparing for AI Engineer roles.",
+  },
 ];
 
 export default experience;

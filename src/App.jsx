@@ -1,14 +1,15 @@
 import "./App.css";
 
-import Navbar from "./components/Navbar/Navbar";
-import Hero from "./components/Hero/Hero";
-import AIStats from "./components/AIStats/AIStats";
-import About from "./components/About/About";
-import Skills from "./components/Skills/Skills";
-import Projects from "./components/Projects/Project";
-import Experience from "./components/Experiences/Experiences";
-import Contact from "./components/Contact/Contact";
-import Footer from "./components/Footer/Footer";
+import Navbar from "./components/layout/Navbar/Navbar";
+import Footer from "./components/layout/Footer/Footer";
+
+import Hero from "./components/sections/Hero/Hero";
+import AIStats from "./components/sections/AIStats/AIStats";
+import About from "./components/sections/About/About";
+import Skills from "./components/sections/Skills/Skills";
+import Projects from "./components/sections/Projects/Project";
+import Experience from "./components/sections/Experiences/Experiences";
+import Contact from "./components/sections/Contact/Contact";
 
 function App() {
   return (
